@@ -145,6 +145,12 @@
 </div>
 
 <script>
+  // Cargar comentarios al inicio
+  window.onload = function () {
+    const comentariosGuardados = JSON.parse(localStorage.getItem("comentarios")) || [];
+    comentariosGuardados.forEach(comentario => mostrarComentario(comentario));
+  };
+
   function agregarComentario() {
     const nombre = document.getElementById("nombre").value.trim();
     const texto = document.getElementById("comentario").value.trim();
@@ -154,26 +160,54 @@
       return;
     }
 
-    const fecha = new Date();
-    const fechaHora = fecha.toLocaleString("es-ES");
+    const fecha = new Date().toLocaleString("es-ES");
 
-    const comentarioDiv = document.createElement("div");
-    comentarioDiv.classList.add("comentario");
-
-    comentarioDiv.innerHTML = `
-      <strong>${nombre}</strong>
-      <p>${texto}</p>
-      <div class="fecha">${fechaHora}</div>
-      <button class="eliminar-btn" onclick="this.parentElement.remove()">Eliminar</button>
-    `;
-
-    document.getElementById("lista-comentarios").appendChild(comentarioDiv);
+    const comentario = { nombre, texto, fecha };
+    mostrarComentario(comentario);
+    guardarComentario(comentario);
 
     // Limpiar campos
     document.getElementById("nombre").value = "";
     document.getElementById("comentario").value = "";
   }
-</script> <br><br><br><br>
+
+  function mostrarComentario(comentario) {
+    const comentarioDiv = document.createElement("div");
+    comentarioDiv.classList.add("comentario");
+
+    comentarioDiv.innerHTML = `
+      <strong>${comentario.nombre}</strong>
+      <p>${comentario.texto}</p>
+      <div class="fecha">${comentario.fecha}</div>
+      <button class="eliminar-btn">Eliminar</button>
+    `;
+
+    // Acción para eliminar y actualizar almacenamiento
+    comentarioDiv.querySelector(".eliminar-btn").onclick = function () {
+      comentarioDiv.remove();
+      eliminarComentario(comentario);
+    };
+
+    document.getElementById("lista-comentarios").appendChild(comentarioDiv);
+  }
+
+  function guardarComentario(comentario) {
+    const comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+    comentarios.push(comentario);
+    localStorage.setItem("comentarios", JSON.stringify(comentarios));
+  }
+
+  function eliminarComentario(comentarioAEliminar) {
+    let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+    comentarios = comentarios.filter(
+      c => !(c.nombre === comentarioAEliminar.nombre &&
+             c.texto === comentarioAEliminar.texto &&
+             c.fecha === comentarioAEliminar.fecha)
+    );
+    localStorage.setItem("comentarios", JSON.stringify(comentarios));
+  }
+</script>
+ <br><br><br><br>
      <footer>
     <h2>Síguenos en nuestras redes</h2>
     <div class="social-icons">
