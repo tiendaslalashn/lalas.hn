@@ -5,7 +5,119 @@
     <link rel="stylesheet" href="estyle.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>lalas.hn</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f6efe7;
+      color: #333;
+    
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 15px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      background: #fff;
+      transition: transform 0.3s ease;
+    }
+
+    .item:hover {
+      transform: scale(1.02);
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .item:hover img {
+      transform: scale(1.05);
+    }
+
+    .info {
+      padding: 10px 15px;
+      border-top: 1px solid #eee;
+      background-color: #fff;
+    }
+
+    .info .precio {
+      font-weight: bold;
+      color: #e91e63;
+    }
+
+    .info .talla {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .item a {
+      display: block;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 10px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 2rem;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr); /* 3 imágenes por fila en móviles */
+      }
+    }
+  </style>
 </head>
 <body>
 <body style="background-color: #f6efe7">
@@ -19,7 +131,7 @@
   <div class="scroll-container">
     <div class="arrow" id="leftArrow">❮</div>
     <nav class="scroll-menu" id="scrollMenu">
-      <a href="#abib">Inicio</a>
+      <a href="index.html">Inicio</a>
       <a href="#accesorios">Catalago</a>
       <a href="#acido">Descuentos</a>
       <a href="#cuidados">Nuevo surtido</a>
@@ -38,9 +150,9 @@
     document.getElementById("rightArrow").onclick = () => {
       scrollMenu.scrollBy({ left: 150, behavior: "smooth" });
     };
-  </script><br><br><br><br>
-  <center><h1>Descubre tu moda</h1></center>
-<br><br><br>
+  </script><br><br><br>
+  <h1>Descubre tu moda</h1>
+<br><br>
   <div class="gallery">
     <div class="item">
       <a href="#img1">
