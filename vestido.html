@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="estyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>lalas.hn</title>
+
+</head>
+<body>
+<body style="background-color: #f6efe7">
+
+  <!-- Logo de LALA'S -->
+  <div class="logo-bar" >
+    <img src="logo.png" alt="" width="50%" height="20%">
+  </div>
+
+  <!-- Barra deslizable -->
+  <div class="scroll-container">
+    <div class="arrow" id="leftArrow">❮</div>
+    <nav class="scroll-menu" id="scrollMenu">
+      <a href="#abib">Inicio</a>
+      <a href="#accesorios">Catalago</a>
+      <a href="#acido">Descuentos</a>
+      <a href="#cuidados">Nuevo surtido</a>
+      <a href="#ofertas">skincare</a>
+      <a href="#extra1">Kit</a>
+      <a href="#extra2">Contacto</a>
+    </nav>
+    <div class="arrow" id="rightArrow">❯</div>
+  </div>
+  <!-- JavaScript para flechas -->
+  <script>
+    const scrollMenu = document.getElementById("scrollMenu");
+    document.getElementById("leftArrow").onclick = () => {
+      scrollMenu.scrollBy({ left: -150, behavior: "smooth" });
+    };
+    document.getElementById("rightArrow").onclick = () => {
+      scrollMenu.scrollBy({ left: 150, behavior: "smooth" });
+    };
+  </script><br><br><br><br>
+  <center><h1>Descubre tu moda</h1></center>
+<br><br><br>
+  <div class="gallery">
+    <div class="item">
+      <a href="#img1">
+        <img src="falda.jpg" alt="Look 1">
+      </a>
+      <div class="info">
+        <div class="precio">$29.99</div>
+        <div class="talla">Talla: S, M, L</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="#img2">
+        <img src="falda.jpg" alt="Look 2">
+      </a>
+      <div class="info">
+        <div class="precio">$34.90</div>
+        <div class="talla">Talla: M, L</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="#img3">
+        <img src="falda.jpg" alt="Look 3">
+      </a>
+      <div class="info">
+        <div class="precio">$24.50</div>
+        <div class="talla">Talla: S</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="#img4">
+        <img src="falda.jpg" alt="Look 4">
+      </a>
+      <div class="info">
+        <div class="precio">$42.00</div>
+        <div class="talla">Talla: L, XL</div>
+      </div>
+    </div>
+
+    <!-- Puedes duplicar más items aquí -->
+  </div>
+
+  <!-- Lightboxes -->
+  <div id="img1" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="falda.jpg" alt="Look 1 Grande">
+  </div>
+
+  <div id="img2" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="falda.jpg" alt="Look 2 Grande">
+  </div>
+
+  <div id="img3" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="falda.jpg" alt="Look 3 Grande">
+  </div>
+
+  <div id="img4" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="falda.jpg" alt="Look 4 Grande">
+  </div>
+
+</body>
+</html>
