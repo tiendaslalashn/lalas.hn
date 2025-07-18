@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Comentarios</title>
+  <link rel="stylesheet" href="estyle.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background:  #f6efe7;
+     
+    }
+
+    .comentarios-container {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffffcc;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #5a3f6b;
+    }
+
+    input[type="text"], textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+      resize: vertical;
+      font-size: 16px;
+      background-color: #fdf8f3;
+    }
+
+    button {
+      background-color: #b695c0;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #9b7cae;
+    }
+
+    .comentario {
+      background: #fff5f8;
+      padding: 15px;
+      border-left: 5px solid #b695c0;
+      margin-top: 15px;
+      border-radius: 10px;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+
+    .comentario:hover {
+      background: #fceef2;
+    }
+
+    .comentario .fecha {
+      font-size: 12px;
+      color: #7a7a7a;
+      margin-top: 6px;
+    }
+
+    .eliminar-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #e87070;
+      border: none;
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: background-color 0.2s ease;
+    }
+
+    .eliminar-btn:hover {
+      background-color: #d04a4a;
+    }
+  </style>
+</head>
+<body>
+<div class="logo-bar" >
+    <img src="logo.png" alt="" width="50%" height="20%">
+  </div>
+
+  <!-- Barra deslizable -->
+  <div class="scroll-container">
+    <div class="arrow" id="leftArrow">❮</div>
+    <nav class="scroll-menu" id="scrollMenu">
+      <a href="index.html">Inicio</a>
+      <a href="#accesorios">Catalago</a>
+      <a href="#acido">Descuentos</a>
+      <a href="#cuidados">Nuevo surtido</a>
+      <a href="#ofertas">skincare</a>
+      <a href="#extra1">Kit</a>
+      <a href="#extra2">Contacto</a>
+    </nav>
+    <div class="arrow" id="rightArrow">❯</div>
+  </div>
+  <!-- JavaScript para flechas -->
+  <script>
+    const scrollMenu = document.getElementById("scrollMenu");
+    document.getElementById("leftArrow").onclick = () => {
+      scrollMenu.scrollBy({ left: -150, behavior: "smooth" });
+    };
+    document.getElementById("rightArrow").onclick = () => {
+      scrollMenu.scrollBy({ left: 150, behavior: "smooth" });
+    };
+  </script><br><br><br><br>
+  <div class="comentarios-container">
+    <h2>Dejanos tu comentario</h2>
+
+    <input type="text" id="nombre" placeholder="Tu nombre" />
+    <textarea id="comentario" rows="4" placeholder="Escribe tu comentario aquí..."></textarea>
+    <button onclick="agregarComentario()">Enviar comentario</button>
+
+    <div id="lista-comentarios"></div>
+  </div>
+
+  <script>
+    // Cargar comentarios al inicio
+    window.onload = function () {
+      const comentariosGuardados = JSON.parse(localStorage.getItem("comentarios")) || [];
+      comentariosGuardados.forEach(comentario => mostrarComentario(comentario));
+    };
+
+    function agregarComentario() {
+      const nombre = document.getElementById("nombre").value.trim();
+      const texto = document.getElementById("comentario").value.trim();
+
+      if (nombre === "" || texto === "") {
+        alert("Por favor, completa ambos campos.");
+        return;
+      }
+
+      const fecha = new Date().toLocaleString("es-ES");
+
+      const comentario = { nombre, texto, fecha };
+      mostrarComentario(comentario);
+      guardarComentario(comentario);
+
+      document.getElementById("nombre").value = "";
+      document.getElementById("comentario").value = "";
+    }
+
+    function mostrarComentario(comentario) {
+      const comentarioDiv = document.createElement("div");
+      comentarioDiv.classList.add("comentario");
+
+      comentarioDiv.innerHTML = `
+        <strong>${comentario.nombre}</strong>
+        <p>${comentario.texto}</p>
+        <div class="fecha">${comentario.fecha}</div>
+        <button class="eliminar-btn">Eliminar</button>
+      `;
+
+      comentarioDiv.querySelector(".eliminar-btn").onclick = function () {
+        comentarioDiv.remove();
+        eliminarComentario(comentario);
+      };
+
+      document.getElementById("lista-comentarios").appendChild(comentarioDiv);
+    }
+
+    function guardarComentario(comentario) {
+      const comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+      comentarios.push(comentario);
+      localStorage.setItem("comentarios", JSON.stringify(comentarios));
+    }
+
+    function eliminarComentario(comentarioAEliminar) {
+      let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+      comentarios = comentarios.filter(
+        c => !(c.nombre === comentarioAEliminar.nombre &&
+               c.texto === comentarioAEliminar.texto &&
+               c.fecha === comentarioAEliminar.fecha)
+      );
+      localStorage.setItem("comentarios", JSON.stringify(comentarios));
+    }
+  </script>
+
+</body>
+</html>
