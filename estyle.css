@@ -175,8 +175,8 @@
       position: absolute;
       top: -50%;
       left: -50%;
-      width: 200%;
-      height: 200%;
+      width: 100%;
+      height: 100%;
       background: radial-gradient(circle at center, rgba(255, 182, 193, 0.15), transparent 70%);
       transform: scale(0);
       transition: transform 0.5s ease;
@@ -186,7 +186,7 @@
     .card:hover::before {
       transform: scale(1);
     }
-  .comentarios-container {
+   .comentarios-container {
       max-width: 600px;
       margin: auto;
       background: #ffffffcc;
@@ -196,24 +196,33 @@
       backdrop-filter: blur(5px);
     }
 
-    input[type="text"], textarea, button {
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #5a3f6b;
+    }
+
+    input[type="text"], textarea {
       width: 100%;
       padding: 12px;
       margin: 8px 0;
+      border: 1px solid #ccc;
       border-radius: 10px;
-      font-size: 16px;
       box-sizing: border-box;
-    }
-
-    textarea {
       resize: vertical;
+      font-size: 16px;
+      background-color: #fdf8f3;
     }
 
     button {
       background-color: #b695c0;
       color: white;
+      padding: 12px 20px;
       border: none;
+      border-radius: 10px;
       cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
@@ -227,6 +236,11 @@
       margin-top: 15px;
       border-radius: 10px;
       position: relative;
+      transition: background-color 0.3s ease;
+    }
+
+    .comentario:hover {
+      background: #fceef2;
     }
 
     .comentario .fecha {
@@ -246,6 +260,11 @@
       border-radius: 6px;
       cursor: pointer;
       font-size: 12px;
+      transition: background-color 0.2s ease;
+    }
+
+    .eliminar-btn:hover {
+      background-color: #d04a4a;
     }
 footer {
       background-color: #dac9df;

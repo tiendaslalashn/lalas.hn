@@ -24,7 +24,7 @@
       <a href="#accesorios">Catalago</a>
       <a href="#acido">Descuentos</a>
       <a href="#cuidados">Nuevo surtido</a>
-      <a href="#ofertas">skincare</a>
+      <a href="#ofertas">Skincare</a>
       <a href="#extra1">Kit</a>
       <a href="##">Contacto</a>
     </nav>
@@ -133,7 +133,79 @@
         </div>
       </a>
     </div>
+  </div><br><br><br>
+  <div class="comentarios-container">
+    <h2>Comentarios</h2>
+
+    <input type="text" id="nombre" placeholder="Tu nombre" />
+    <textarea id="comentario" rows="4" placeholder="Escribe tu comentario aquí..."></textarea>
+    <button onclick="agregarComentario()">Enviar comentario</button>
+
+    <div id="lista-comentarios"></div>
   </div>
+
+  <script>
+    // Cargar comentarios al inicio
+    window.onload = function () {
+      const comentariosGuardados = JSON.parse(localStorage.getItem("comentarios")) || [];
+      comentariosGuardados.forEach(comentario => mostrarComentario(comentario));
+    };
+
+    function agregarComentario() {
+      const nombre = document.getElementById("nombre").value.trim();
+      const texto = document.getElementById("comentario").value.trim();
+
+      if (nombre === "" || texto === "") {
+        alert("Por favor, completa ambos campos.");
+        return;
+      }
+
+      const fecha = new Date().toLocaleString("es-ES");
+
+      const comentario = { nombre, texto, fecha };
+      mostrarComentario(comentario);
+      guardarComentario(comentario);
+
+      document.getElementById("nombre").value = "";
+      document.getElementById("comentario").value = "";
+    }
+
+    function mostrarComentario(comentario) {
+      const comentarioDiv = document.createElement("div");
+      comentarioDiv.classList.add("comentario");
+
+      comentarioDiv.innerHTML = `
+        <strong>${comentario.nombre}</strong>
+        <p>${comentario.texto}</p>
+        <div class="fecha">${comentario.fecha}</div>
+        <button class="eliminar-btn">Eliminar</button>
+      `;
+
+      comentarioDiv.querySelector(".eliminar-btn").onclick = function () {
+        comentarioDiv.remove();
+        eliminarComentario(comentario);
+      };
+
+      document.getElementById("lista-comentarios").appendChild(comentarioDiv);
+    }
+
+    function guardarComentario(comentario) {
+      const comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+      comentarios.push(comentario);
+      localStorage.setItem("comentarios", JSON.stringify(comentarios));
+    }
+
+    function eliminarComentario(comentarioAEliminar) {
+      let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [];
+      comentarios = comentarios.filter(
+        c => !(c.nombre === comentarioAEliminar.nombre &&
+               c.texto === comentarioAEliminar.texto &&
+               c.fecha === comentarioAEliminar.fecha)
+      );
+      localStorage.setItem("comentarios", JSON.stringify(comentarios));
+    }
+  </script>
+
  <br><br><br><br>
      <footer>
     <h2>Síguenos en nuestras redes</h2>
