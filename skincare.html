@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilos.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <title>lalas.hn</title>
+
+</head>
+<body>
+<body style="background-color: #f6efe7">
+
+  <!-- Logo de LALA'S -->
+  <div class="logo-bar" >
+    <img src="logo.png" alt="" width="50%" height="20%">
+  </div>
+
+  <!-- Barra deslizable -->
+  <div class="scroll-container">
+    <div class="arrow" id="leftArrow">❮</div>
+    <nav class="scroll-menu" id="scrollMenu">
+      <a href="index.html">Inicio</a>
+      <a href="#accesorios">Catalago</a>
+      <a href="#acido">Descuentos</a>
+      <a href="#cuidados">Nuevo surtido</a>
+      <a href="#ofertas">skincare</a>
+      <a href="#extra1">Kit</a>
+      <a href="#extra2">Contacto</a>
+    </nav>
+    <div class="arrow" id="rightArrow">❯</div>
+  </div>
+  <!-- JavaScript para flechas -->
+  <script>
+    const scrollMenu = document.getElementById("scrollMenu");
+    document.getElementById("leftArrow").onclick = () => {
+      scrollMenu.scrollBy({ left: -150, behavior: "smooth" });
+    };
+    document.getElementById("rightArrow").onclick = () => {
+      scrollMenu.scrollBy({ left: 150, behavior: "smooth" });
+    };
+  </script><br><br><br>
+  <h1>Descubre tu moda</h1>
+<br><br>
+  <div class="gallery">
+    <div class="item">
+      <a href="#img1">
+        <img src="skincare1.jpg" alt="Look 1">
+      </a>
+      <div class="info">
+        <div class="precio">L55</div>
+         <div class="talla">Limpiador facial Ácido Hialurónico</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="#img2">
+        <img src="skincare2.jpg" alt="Look 2">
+      </a>
+      <div class="info">
+        <div class="precio">L170</div>
+         <div class="talla">Crema para el rejuvecimiento del acné</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="#img3">
+        <img src="skincare3.jpg" alt="Look 3">
+      </a>
+      <div class="info">
+        <div class="precio">L395</div>
+        <div class="talla">Aceite de semilla de Cannabis sativa calmante loción para el cuerpo</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <a href="#img4">
+        <img src="skincare4.jpg" alt="Look 4">
+      </a>
+      <div class="info">
+        <div class="precio">L390</div>
+         <div class="talla">Exfoliante corporal fresco cítrico</div>
+      </div>
+    </div>
+  <div class="item">
+      <a href="#img5">
+        <img src="skincare5.jpg" alt="Look 5">
+      </a>
+      <div class="info">
+        <div class="precio">L80</div>
+       <div class="talla">Loción protectora solar</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img6">
+        <img src="skincare6.jpg" alt="Look 6">
+      </a>
+      <div class="info">
+        <div class="precio">L350</div>
+        <div class="talla">Colágeno reafirmante agua micelar limpiadora </div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img7">
+        <img src="skincare7.jpg" alt="Look 7">
+      </a>
+      <div class="info">
+        <div class="precio">L220</div>
+       <div class="talla">Loción hidratante diaria para piel normal a seca </div>
+      </div>
+    </div>
+       <div class="item">
+      <a href="#img8">
+        <img src="skincare8.jpg" alt="Look 8">
+      </a>
+      <div class="info">
+        <div class="precio">L250</div>
+        <div class="talla">Alba Botánica crema hidratante hawaiana</div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img9">
+        <img src="skincare9.jpg" alt="Look 9">
+      </a>
+      <div class="info">
+        <div class="precio">L350</div>
+       <div class="talla">Suero facial iluminador +Vitamina C </div>
+      </div>
+    </div>
+      
+        <div class="item">
+      <a href="#img10">
+        <img src="skincare10.jpg" alt="Look 10">
+      </a>
+      <div class="info">
+        <div class="precio">L320</div>
+       <div class="talla">Agua Micelar desmaquillante </div>
+      </div>
+    </div>
+      
+        <div class="item">
+      <a href="#img11">
+        <img src="skincare11.jpg" alt="Look 11">
+      </a>
+      <div class="info">
+        <div class="precio">L550</div>
+       <div class="talla">Gel de baño de burbujas Frambuesa Rosada</div>
+      </div>
+    </div>
+           <div class="item">
+      <a href="#img12">
+        <img src="skincare12.jpg" alt="Look 12">
+      </a>
+      <div class="info">
+        <div class="precio">L200</div>
+        <div class="talla">Suero Renovador de Brillo Antideslizante Anticoxidante</div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img13">
+        <img src="skincare13.jpg" alt="Look 13">
+      </a>
+      <div class="info">
+        <div class="precio">L350</div>
+      <div class="talla">Gel de Ducha Exfoliante de Albaricoque</div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img14">
+        <img src="skincare14.jpg" alt="Look 14">
+      </a>
+      <div class="info">
+        <div class="precio">L320</div>
+        <div class="talla">Limpiador Hidratante Sedoso</div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img15">
+        <img src="skincare15.jpg" alt="Look 15">
+      </a>
+      <div class="info">
+        <div class="precio">L120</div>
+       <div class="talla">Crema depiladora</div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img16">
+        <img src="skincare16.jpg" alt="Look 16">
+      </a>
+      <div class="info">
+        <div class="precio">L180</div>
+       <div class="talla">Exfoliante corporal con sorbete de miel</div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img17">
+        <img src="skincare17.jpg" alt="Look 17">
+      </a>
+      <div class="info">
+        <div class="precio">L120</div>
+       <div class="talla">Loció Corporal Flor Cerezo Japonés</div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img18">
+        <img src="skincare18.jpg" alt="Look 18">
+      </a>
+      <div class="info">
+        <div class="precio">L170</div>
+       <div class="talla">Desmaquillante y limpiador </div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img19">
+        <img src="skincare19.jpg" alt="Look 19">
+      </a>
+      <div class="info">
+        <div class="precio">L220</div>
+        <div class="talla">Agua Micelar Desmaquillante<div class="talla">Exfoliante corporal fresco cítrico</div></div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img20">
+        <img src="skincare20.jpg" alt="Look 20">
+      </a>
+      <div class="info">
+        <div class="precio">L295</div>
+        <div class="talla">Jabón liquido para el acné sin aceite Exfoliante espumoso de pomelo rosa</div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img21">
+        <img src="skincare21.jpg" alt="Look 21">
+      </a>
+      <div class="info">
+        <div class="precio">L250</div>
+       <div class="talla">Sérum Facial Hidratante +Ácido Hialuronico +Vitamina B5</div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img22">
+        <img src="skincare22.jpg" alt="Look 22">
+      </a>
+      <div class="info">
+        <div class="precio">L395</div>
+        <div class="talla">Desmaquillante Limpia la piel con Hamamelis y aceite de Jojoba</div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img23">
+        <img src="skincare23.jpg" alt="Look 23">
+      </a>
+      <div class="info">
+        <div class="precio">L550</div>
+        <div class="talla">Shampoo Infundido con aceite de coco y extracto botánico que fortalecen el cabello</div>
+      </div>
+    </div>
+      <div class="item">
+      <a href="#img24">
+        <img src="skincare24.jpg" alt="Look 24">
+      </a>
+      <div class="info">
+        <div class="precio">L495</div>
+        <div class="talla">Gel de Ducha Refrescante Agua de Rosas y Aloe Vera</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img25">
+        <img src="skincare25.jpg" alt="Look 25">
+      </a>
+      <div class="info">
+        <div class="precio">L200</div>
+          <div class="talla">Exfoliante y Purificante Piel Natural</div>     
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img26">
+        <img src="skincare26.jpg" alt="Look 26">
+      </a>
+      <div class="info">
+        <div class="precio">L110</div>
+        <div class="talla">Hialurónico B5 Regenerador y Regulador</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img27">
+        <img src="skincare27.jpg" alt="Look 27">
+      </a>
+      <div class="info">
+        <div class="precio">L170</div>
+        <div class="talla">Limpiador, Blanqueador Arbutina Niacinamida</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img28">
+        <img src="skincare28.jpg" alt="Look 28">
+      </a>
+      <div class="info">
+        <div class="precio">L80</div>
+        <div class="talla">Protector Solar Vitamina C</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img29">
+        <img src="skincare29.jpg" alt="Look 29">
+      </a>
+      <div class="info">
+        <div class="precio">L220</div>
+        <div class="talla">Gel limpiador con Ácido Hialurónico Hidratante </div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img30">
+        <img src="skincare30.jpg" alt="Look 30">
+      </a>
+      <div class="info">
+        <div class="precio">L120</div>
+        <div class="talla">Bruma facial Lavanda Manzanilla</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img31">
+        <img src="skincare31.jpg" alt="Look 31">
+      </a>
+      <div class="info">
+        <div class="precio">L450</div>
+        <div class="talla">Gel de Ducha Rosa Mosqueta </div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img32">
+        <img src="skincare32.jpg" alt="Look 32">
+      </a>
+      <div class="info">
+        <div class="precio">L130</div>
+        <div class="talla">Crema Facial Calmante y Recorfortante</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img33">
+        <img src="skincare33.jpg" alt="Look 33">
+      </a>
+      <div class="info">
+        <div class="precio">L390</div>
+        <div class="talla">Exfoliante Corporal Coco y Menta</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img34">
+        <img src="skincare34.jpg" alt="Look 24">
+      </a>
+      <div class="info">
+        <div class="precio">L110</div>
+        <div class="talla">Protector Solar FPS 50+</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img35">
+        <img src="skincare35.jpg" alt="Look 35">
+      </a>
+      <div class="info">
+        <div class="precio">L80</div>
+        <div class="talla">Protector Solar Mineral Ácido Hialurónico</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img36">
+        <img src="skincare36.jpg" alt="Look 36">
+      </a>
+      <div class="info">
+        <div class="precio">L390</div>
+        <div class="talla">Gel de Ducha Calmante Avena y Manteca de karité</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img37">
+        <img src="skincare37.jpg" alt="Look 37">
+      </a>
+      <div class="info">
+        <div class="precio">L120</div>
+        <div class="talla">Bruma Facial Té Verde </div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img38">
+        <img src="skincare38.jpg" alt="Look 38">
+      </a>
+      <div class="info">
+        <div class="precio">L250</div>
+        <div class="talla">Crema Reparadora de Caracol</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img39">
+        <img src="skincare39.jpg" alt="Look 39">
+      </a>
+      <div class="info">
+        <div class="precio">L55</div>
+        <div class="talla"> Refrescante Limpiador Facial</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img40">
+        <img src="skincare40.jpg" alt="Look 40">
+      </a>
+      <div class="info">
+        <div class="precio">L140</div>
+        <div class="talla">Leche Protectora Solar UV Perfecta</div>
+      </div>
+    </div>
+     <div class="item">
+      <a href="#img41">
+        <img src="skincare41.jpg" alt="Look 41">
+      </a>
+      <div class="info">
+        <div class="precio">L310</div>
+        <div class="talla">Su Dispositivo Profesional para el Cuidado de la Piel</div>
+      </div>
+    </div>
+    <!-- Puedes duplicar más items aquí -->
+  </div>
+
+  <!-- Lightboxes -->
+  <div id="img1" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare1.jpg" alt="Look 1 Grande">
+  </div>
+
+  <div id="img2" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare2.jpg" alt="Look 2 Grande">
+  </div>
+
+  <div id="img3" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare3.jpg" alt="Look 3 Grande">
+  </div>
+
+  <div id="img4" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare4.jpg" alt="Look 4 Grande">
+  </div>
+<div id="img5" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare5.jpg" alt="Look 5 Grande">
+  </div>
+  <div id="img6" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare6.jpg" alt="Look 6 Grande">
+  </div>
+    
+    <div id="img7" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare7.jpg" alt="Look 7 Grande">
+  </div>
+      <div id="img8" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare8.jpg" alt="Look 8 Grande">
+  </div>
+    <div id="img9" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare9.jpg" alt="Look 9 Grande">
+  </div>
+      <div id="img10" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare10.jpg" alt="Look 10 Grande">
+  </div>
+      <div id="img11" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare11.jpg" alt="Look 11 Grande">
+  </div>
+      <div id="img12" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare12.jpg" alt="Look 12 Grande">
+  </div>
+       <div id="img13" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare13.jpg" alt="Look 13 Grande">
+  </div>
+       <div id="img14" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare14.jpg" alt="Look 14 Grande">
+  </div>
+       <div id="img15" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare15.jpg" alt="Look 15 Grande">
+  </div>
+       <div id="img16" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare16.jpg" alt="Look 16 Grande">
+  </div>
+       <div id="img17" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare17.jpg" alt="Look 17 Grande">
+  </div>
+       <div id="img18" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare18.jpg" alt="Look 18 Grande">
+  </div>
+       <div id="img19" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare19.jpg" alt="Look 19 Grande">
+  </div>
+       <div id="img20" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare20.jpg" alt="Look 20 Grande">
+  </div>
+       <div id="img21" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare21.jpg" alt="Look 21 Grande">
+  </div>
+       <div id="img22" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare22.jpg" alt="Look 22 Grande">
+  </div>
+       <div id="img23" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare23.jpg" alt="Look 23 Grande">
+  </div>
+       <div id="img24" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare24.jpg" alt="Look 24 Grande">
+  </div>
+     <div id="img25" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare25.jpg" alt="Look 25 Grande">
+  </div>
+     <div id="img26" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare26.jpg" alt="Look 26 Grande">
+  </div>
+     <div id="img27" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare27.jpg" alt="Look 27 Grande">
+  </div>
+     <div id="img28" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare28.jpg" alt="Look 28 Grande">
+  </div>
+     <div id="img29" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare29.jpg" alt="Look 29 Grande">
+  </div>
+     <div id="img30" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare30.jpg" alt="Look 30 Grande">
+  </div>
+     <div id="img31" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare31.jpg" alt="Look 31 Grande">
+  </div>
+     <div id="img32" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare32.jpg" alt="Look 32 Grande">
+  </div>
+     <div id="img33" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare33.jpg" alt="Look 33 Grande">
+  </div>
+     <div id="img34" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare34.jpg" alt="Look 34 Grande">
+  </div>
+     <div id="img35" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare35.jpg" alt="Look 35 Grande">
+  </div>
+     <div id="img36" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare36.jpg" alt="Look 36 Grande">
+  </div>
+     <div id="img37" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare37.jpg" alt="Look 37 Grande">
+  </div>
+     <div id="img38" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare38.jpg" alt="Look 38 Grande">
+  </div>
+     <div id="img39" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare39.jpg" alt="Look 39 Grande">
+  </div>
+     <div id="img40" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare40.jpg" alt="Look 40 Grande">
+  </div>
+     <div id="img41" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="skincare41.jpg" alt="Look 41 Grande">
+  </div>
+   <br><br><br>
+    <footer>
+    <h2>Síguenos en nuestras redes</h2>
+    <div class="social-icons">
+       <a href="tel:504 3236 0562" class="whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/lalas.hn?igsh=MXRqenp1azRnNG1wYw==" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@lalas.hn?_t=ZM-8xmZLQtHSk9&_r=1" class="tiktok" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <div class="copyright" style="color: black">
+      © 2025 Belén Flores. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+</html>
