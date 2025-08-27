@@ -1,185 +1,236 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tiendas LALA´S Blog</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog | LALA'S </title>
+  <meta name="description" content="Plantilla de blog para tienda: moda, carteras, accesorios y perfumes. Responsive, con buscador y filtros." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f6efe7;
-      color: #333;
-    }
-    header {
-      background: #b695c0;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    nav {
-      background: #dac9df;
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #333;
-      margin: 5px 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #b695c0;
-    }
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: 20px auto;
-    }
-    .post {
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease;
-    }
-    .post:hover {
-      transform: scale(1.02);
-    }
-    .post img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
-    .post h2 {
-      color: #b695c0;
-    }
-    .footer {
-      background: #b695c0;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      margin-top: 30px;
-    }
-    .btn {
-      background: #dac9df;
-      color: #333;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-    .btn:hover {
-      background: #b695c0;
-      color: #fff;
-    }
-    /* Buscador */
-    #searchBar {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 2px solid #dac9df;
-      border-radius: 8px;
+    :root{
+      --bg:#f6f4fb;
+      --card:#ffffff;
+      --text:#1f1f29;
+      --muted:#666782;
+      --primary:#7c4dff;
+      --primary-2:#b695c0;
+      --accent:#f6efe7;
+      --shadow: 0 10px 25px rgba(35, 0, 87, .08);
+      --radius: 16px;
     }
 
-    /* Responsivo */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-      }
-      nav a {
-        margin: 10px 0;
-      }
-      header h1 {
-        font-size: 1.8rem;
-      }
-      .post {
-        padding: 15px;
-      }
-      .post h2 {
-        font-size: 1.2rem;
-      }
+    *{box-sizing:border-box}
+    body{
+      margin:0;padding:0;
+      font-family:"Poppins", system-ui, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
 
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      header p {
-        font-size: 0.9rem;
-      }
-      .btn {
-        width: 100%;
-        text-align: center;
-      }
-    }
+    .topbar{position:sticky; top:0; z-index:100; backdrop-filter: blur(8px); background:linear-gradient(90deg, rgba(246,239,231,.8), rgba(124,77,255,.06)); border-bottom:1px solid rgba(124,77,255,.15)}
+    .wrap{max-width:1100px; margin:0 auto; padding:0 18px;}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0;}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:700; letter-spacing:.3px}
+    .logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--primary),#c8a6ff);box-shadow:var(--shadow)}
+    .nav a{text-decoration:none; color:var(--text); font-weight:600; opacity:.9; padding:8px 12px; border-radius:12px; transition:all .2s ease}
+    .nav a:hover{background:var(--accent)}
+
+    .hero{padding:48px 0 20px}
+    .hero-card{background:linear-gradient(135deg, #fff, #fff 55%, #f2ebff); border-radius:calc(var(--radius) + 8px); box-shadow: var(--shadow); padding:28px; display:grid; gap:14px}
+    .eyebrow{font-size:.9rem; color:var(--primary); font-weight:700; letter-spacing:.12em; text-transform:uppercase}
+    .title{font-size:clamp(1.4rem, 2.2vw + 1rem, 2.4rem); line-height:1.18; margin:0}
+    .subtitle{color:var(--muted); margin:0}
+
+    .controls{display:flex; flex-wrap:wrap; gap:10px; margin-top:10px}
+    .search{flex:1 1 240px; display:flex; align-items:center; gap:10px; background:#fff; border-radius:14px; padding:10px 12px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.05)}
+    .search input{border:0; outline:0; width:100%; font-size:.98rem; background:transparent}
+
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{border:1px solid rgba(124,77,255,.25); background:#fff; color:var(--text); padding:8px 12px; border-radius:20px; font-weight:600; font-size:.9rem; cursor:pointer; transition: all .2s ease}
+    .chip:hover{transform:translateY(-2px); box-shadow:var(--shadow)}
+    .chip.active{background:var(--primary); color:#fff; border-color:transparent}
+
+    .grid{display:grid; gap:18px; grid-template-columns:repeat(12, 1fr); margin:24px 0 60px}
+    .col{grid-column: span 4}
+    @media (max-width: 980px){.col{grid-column: span 6}}
+    @media (max-width: 620px){.col{grid-column: span 12}}
+
+    .card{background:var(--card); border-radius:var(--radius); box-shadow: var(--shadow); overflow:hidden; display:flex; flex-direction:column; height:100%; border:1px solid rgba(0,0,0,.04); transition: transform .2s ease, box-shadow .2s ease}
+    .card:hover{transform:translateY(-4px); box-shadow: 0 14px 30px rgba(35,0,87,.12)}
+
+    .thumb{position:relative; aspect-ratio: 16/9; overflow:hidden}
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block}
+    .badge{position:absolute; top:12px; left:12px; background:rgba(31,31,41,.85); color:#fff; font-size:.78rem; font-weight:700; padding:6px 10px; border-radius:999px}
+
+    .content{padding:16px 16px 12px; display:grid; gap:8px}
+    .content h3{margin:0; font-size:1.06rem}
+    .excerpt{color:var(--muted); font-size:.95rem}
+
+    .meta{display:flex; align-items:center; justify-content:space-between; gap:10px; padding:0 16px 16px}
+    .tags{display:flex; gap:8px; flex-wrap:wrap}
+    .tag{background:var(--accent); color:var(--text); padding:6px 10px; border-radius:999px; font-size:.8rem; font-weight:600; border:1px solid rgba(0,0,0,.05)}
+
+    .btn{display:inline-flex; align-items:center; justify-content:center; padding:10px 14px; gap:8px; border-radius:12px; text-decoration:none; cursor:pointer; font-weight:700; border:0; background:var(--primary); color:#fff; box-shadow:var(--shadow); transition:transform .2s ease, opacity .2s ease}
+    .btn:hover{transform:translateY(-2px)}
+
+    footer{padding:40px 0; border-top:1px solid rgba(0,0,0,.06); background:#fff}
+    .footer-grid{display:grid; gap:18px; grid-template-columns: 1.2fr .8fr}
+    @media (max-width:820px){.footer-grid{grid-template-columns:1fr}}
+    .newsletter{background:linear-gradient(135deg,#fff,#f0eaff); padding:18px; border-radius:var(--radius); box-shadow:var(--shadow)}
+    .newsletter form{display:flex; gap:10px; flex-wrap:wrap}
+    .newsletter input{flex:1 1 220px; padding:12px 14px; border-radius:12px; border:1px solid rgba(0,0,0,.08)}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
   </style>
 </head>
 <body>
-  <header>
-    <h1>Tiendas LALA´S</h1>
-    <p>Moda juvenil: ropa, accesorios, perfumes y carteras ✨</p>
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="brand"><span class="logo" aria-hidden="true"></span> LALA'S • Blog</div>
+      <nav>
+        <a href="index.html">Inicio</a>
+        <a href="catalogo.html">Artículos </a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
   </header>
 
-  <nav>
-    <a href="index.html">Inicio</a>
-    <a href="#">Moda</a>
-    <a href="#">Accesorios</a>
-    <a href="#">Perfumes</a>
-    <a href="#">Carteras</a>
-  </nav>
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">Blog de tienda</span>
+        <h1 class="title">Ideas, tips y tendencias de moda, carteras, accesorios y perfumes</h1>
+        <p class="subtitle">Publica novedades, guías de compra y contenido útil que conecte tus productos con la vida real de tus clientes. ✨</p>
 
-  <div class="container">
-    <input type="text" id="searchBar" placeholder="🔍 Buscar artículos..." onkeyup="buscarPost()">
+        <div class="controls" id="categorias">
+         
+          <div class="chips">
+            <button class="chip active" data-cat="all">Todo</button>
+            <button class="chip" data-cat="tendencias">Tendencias</button>
+            <button class="chip" data-cat="carteras">Carteras</button>
+            <button class="chip" data-cat="accesorios">Accesorios</button>
+            <button class="chip" data-cat="perfumes">Perfumes</button>
+            <button class="chip" data-cat="outfits">Outfits</button>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <div class="post">
-      <h2>Los 5 looks juveniles que marcarán tendencia este verano 2025</h2>
-      <p><em>Publicado el 20 de agosto de 2025 por Tiendas LALA´S</em></p>
-      <img src="vestido63.jpg" alt="Looks juveniles">
-      <p>Este verano la moda juvenil viene cargada de colores vibrantes, jeans anchos y carteras tipo tote. Aquí te contamos cómo combinarlos para un estilo fresco y moderno. 🌞</p>
-      <button class="btn" onclick="likePost(this)">👍 Me gusta</button>
-    </div>
+    <section id="articulos" class="grid">
+      <article class="card col" data-cat="tendencias outfits">
+        <div class="thumb">
+          <img src="vestido67.jpg" alt="Tendencias de moda" />
+          <span class="badge">Tendencias 2025</span>
+        </div>
+        <div class="content">
+          <h3>Colores que dominarán esta temporada</h3>
+          <p class="excerpt">Morados vibrantes, nude cremoso y destellos metálicos llegan con fuerza...</p>
+        </div>
+        <div class="meta">
+          <div class="tags"><span class="tag">#tendencias</span><span class="tag">#outfits</span></div>
+          <a class="btn" href="#">Leer más</a>
+        </div>
+      </article>
 
-    <div class="post">
-      <h2>Perfumes juveniles: fragancias que no pueden faltar</h2>
-      <p><em>Publicado el 15 de agosto de 2025 por Mariana</em></p>
-      <img src="perfume2.jpg" alt="Perfumes">
-      <p>Las notas frutales y florales dominan esta temporada. Descubre las fragancias más frescas y juveniles que puedes llevar contigo. 🌸</p>
-      <button class="btn" onclick="likePost(this)">👍 Me gusta</button>
-    </div>
+      <article class="card col" data-cat="carteras">
+        <div class="thumb">
+          <img src="cartera2.jpg" alt="Cartera elegante" />
+          <span class="badge">Guía de compra</span>
+        </div>
+        <div class="content">
+          <h3>Cómo elegir la cartera perfecta para cada ocasión</h3>
+          <p class="excerpt">Del bolso shopper al clutch elegante...</p>
+        </div>
+        <div class="meta">
+          <div class="tags"><span class="tag">#carteras</span><span class="tag">#básicos</span></div>
+          <a class="btn" href="#">Ver tips</a>
+        </div>
+      </article>
 
-    <div class="post">
-      <h2>Cómo elegir los accesorios perfectos</h2>
-      <p><em>Publicado el 10 de agosto de 2025 por Laura</em></p>
-      <img src="accesorio57.jpg" alt="Accesorios">
-      <p>Un collar llamativo, unas gafas modernas o una cartera juvenil pueden transformar tu look básico en algo espectacular. 💎</p>
-      <button class="btn" onclick="likePost(this)">👍 Me gusta</button>
-    </div>
-  </div>
+      <article class="card col" data-cat="accesorios">
+        <div class="thumb">
+          <img src="accesorio57.jpg" alt="Accesorios de moda" />
+          <span class="badge">Accesorios</span>
+        </div>
+        <div class="content">
+          <h3>3 formas de elevar tu look con accesorios</h3>
+          <p class="excerpt">Cinturones, collares por capas y aretes statement...</p>
+        </div>
+        <div class="meta">
+          <div class="tags"><span class="tag">#accesorios</span><span class="tag">#estilo</span></div>
+          <a class="btn" href="#">Descubrir</a>
+        </div>
+      </article>
 
-  <div class="footer">
-    <p>© 2025 Tiendas LALA´S - Todos los derechos reservados</p>
-  </div>
+      <article class="card col" data-cat="perfumes">
+        <div class="thumb">
+          <img src="perfume2.jpg" alt="Perfume" />
+          <span class="badge">Fragancias</span>
+        </div>
+        <div class="content">
+          <h3>Perfumes frescos vs. dulces: ¿cuál es para ti?</h3>
+          <p class="excerpt">Notas cítricas para el día y acordes vainilla para la noche...</p>
+        </div>
+        <div class="meta">
+          <div class="tags"><span class="tag">#perfumes</span><span class="tag">#guía</span></div>
+          <a class="btn" href="#">Elegir fragancia</a>
+        </div>
+      </article>
+
+      <article class="card col" data-cat="outfits tendencias">
+        <div class="thumb">
+          <img src="pantalon7.jpg" alt="Outfits con jeans" />
+          <span class="badge">Lookbook</span>
+        </div>
+        <div class="content">
+          <h3>Outfits con jeans wide‑leg que estilizan</h3>
+          <p class="excerpt">Proporciones, calzado y tops ideales para crear silueta...</p>
+        </div>
+        <div class="meta">
+          <div class="tags"><span class="tag">#outfits</span><span class="tag">#tendencias</span></div>
+          <a class="btn" href="#">Ver lookbook</a>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
+  <footer id="contacto">
+ 
+    <div class="wrap" style="margin-top:18px; color:var(--muted); font-size:.9rem">© <span id="year"></span> Tiendas LALA´S</div>
+  </footer>
 
   <script>
-    function likePost(btn) {
-      btn.innerText = "❤️ Te gusta";
-      btn.disabled = true;
-    }
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const chips = document.querySelectorAll('.chip');
+    const cards = document.querySelectorAll('.card');
+    const q = document.getElementById('q');
+    let activeCat = 'all';
 
-    function buscarPost() {
-      let input = document.getElementById('searchBar').value.toLowerCase();
-      let posts = document.getElementsByClassName('post');
-      for (let i = 0; i < posts.length; i++) {
-        let texto = posts[i].innerText.toLowerCase();
-        posts[i].style.display = texto.includes(input) ? "block" : "none";
-      }
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        activeCat = chip.dataset.cat;
+        filtrar();
+      });
+    });
+
+    q.addEventListener('input', filtrar);
+
+    function filtrar(){
+      const term = q.value.trim().toLowerCase();
+      cards.forEach(card => {
+        const cat = card.dataset.cat;
+        const texto = card.innerText.toLowerCase();
+        const matchCat = (activeCat === 'all') || cat.includes(activeCat);
+        const matchText = term === '' || texto.includes(term);
+        card.style.display = (matchCat && matchText) ? 'flex' : 'none';
+      });
     }
   </script>
 </body>
