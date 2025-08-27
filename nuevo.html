@@ -92,9 +92,9 @@
     <div class="wrap nav">
       <div class="brand"><span class="logo" aria-hidden="true"></span> LALA'S • Blog</div>
       <nav>
-        <a href="index.html">Inicio</a>
-        <a href="catalogo.html">Artículos </a>
-        <a href="#contacto">Contacto</a>
+        <a href="#articulos">Inicio</a>
+        <a href="#categorias">Artículo </a>
+
       </nav>
     </div>
   </header>
@@ -107,7 +107,10 @@
         <p class="subtitle">Publica novedades, guías de compra y contenido útil que conecte tus productos con la vida real de tus clientes. ✨</p>
 
         <div class="controls" id="categorias">
-         
+          <div class="search" role="search">
+            <label for="q" class="sr-only">Buscar artículo</label>
+            <input id="q" type="search" placeholder="Buscar: carteras, blusas, perfumes..." />
+          </div>
           <div class="chips">
             <button class="chip active" data-cat="all">Todo</button>
             <button class="chip" data-cat="tendencias">Tendencias</button>
