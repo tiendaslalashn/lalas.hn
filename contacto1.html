@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - LALA´S</title>
+  <style>
+    /* ====== ESTILOS GENERALES ====== */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f6efe7;
+      color: #333;
+    }
+
+    /* ====== NAVBAR ====== */
+    nav {
+      background: #dac9df; /* tono claro y elegante */
+      padding: 15px 30px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffff;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #b695c0;
+    }
+
+    /* ====== SECCIÓN CONTACTO ====== */
+    .contacto {
+      background: #dac9df;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .contacto h2 {
+      font-size: 2rem;
+      color: #4a3c4c;
+      margin-bottom: 10px;
+    }
+
+    .contacto p {
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .contacto-contenido {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* Formulario */
+    .formulario {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .formulario input,
+    .formulario textarea {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+      background: #f6efe7;
+      box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .formulario button {
+    
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .formulario button:hover {
+      background: #9d7ea9;
+    }
+
+    /* Información de contacto */
+    .info-contacto {
+      flex: 1;
+      min-width: 280px;
+      text-align: left;
+      background: #f6efe7;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .info-contacto h3 {
+      margin-bottom: 10px;
+      color: #4a3c4c;
+    }
+
+    .info-contacto p {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+
+    /* ====== RESPONSIVE ====== */
+    @media (max-width: 768px) {
+      .contacto-contenido {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .info-contacto {
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav>
+    <a href="blog2.html">Inicio</a>
+  </nav>
+
+  <!-- ====== CONTACTO ====== -->
+
+  <section class="contacto" id="contacto">
+    <h2>Contáctanos</h2>
+    <p>Estamos aquí para ayudarte. Déjanos un mensaje y te responderemos lo antes posible.</p>
+    <center>
+    <div class="contacto-contenido">
+    
+
+      <!-- Información de contacto -->
+      <div class="info-contacto">
+        <h3>Información</h3>
+        <p>📍 Dirección: Barrio Santa Clara, una cuadra al norte de la plaza Ramón Ignacio Díaz, frente a la farmacia Corazón de María el Paraíso, El Paraíso, Honduras</p>
+        <p>📞 Teléfono: +504 8952-3207</p>
+        <p>✉️ Correo: lalastiendas@gmail.com</p>
+      </div>
+    </div>
+    </center>
+  </section>
+
+</body>
+</html>
