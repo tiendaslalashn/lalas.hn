@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LALA´S | Tendencias en accesorios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --mauve-50:#faf7ff;
+      --mauve-100:#f2e8ff;
+      --mauve-200:#e7d6ff;
+      --mauve-400:#a277ff;
+      --mauve-500:#7b36ff;
+      --mauve-600:#5f28cc;
+      --ink-900:#1e1b2e;
+      --ink-600:#4b4566;
+      --ok:#2fbf71;
+      --warn:#ff6b6b;
+      --radius: 18px;
+      --shadow: 0 10px 30px rgba(123,54,255,.15);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0}
+    body{
+      font-family:'Poppins',sans-serif;
+      color:var(--ink-900);
+      background:linear-gradient(180deg,var(--mauve-50),#fff);
+      line-height:1.65;
+    }
+    a{color:var(--mauve-500);text-decoration:none}
+    a:hover{color:var(--mauve-600)}
+    .container{max-width:1100px;margin:auto;padding:24px}
+    header{position:sticky;top:0;z-index:40;backdrop-filter:saturate(140%) blur(8px);background:rgba(255,255,255,.8);border-bottom:1px solid var(--mauve-100)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 24px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:40px;height:40px;border-radius:12px;background:conic-gradient(from 210deg,var(--mauve-400),var(--mauve-500),var(--mauve-400));box-shadow: var(--shadow)}
+    .brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.5px}
+    .tag{font-size:12px;padding:6px 10px;border-radius:999px;background:var(--mauve-200);color:#4a2b8a;font-weight:600}
+    .hero{padding:40px 0 16px}
+    .hero-card{background:#fff;border:1px solid var(--mauve-100);border-radius:calc(var(--radius) + 6px);padding:28px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .hero-card:after{content:"";position:absolute;right:-60px;top:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(closest-side, rgba(162,119,255,.28), transparent);filter: blur(2px)}
+    .eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-600);font-weight:600}
+    .title{font-size:34px;line-height:1.2;margin:.35em 0 .2em}
+    .subtitle{color:var(--ink-600);max-width:65ch}
+    .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .chip{font-size:12px;padding:6px 10px;border-radius:999px;background:#fff;border:1px solid var(--mauve-100)}
+    article{display:grid;grid-template-columns: 1.2fr .8fr;gap:26px;margin-top:24px}
+    @media (max-width: 980px){article{grid-template-columns:1fr}}
+    .content{background:#fff;border:1px solid var(--mauve-100);border-radius:var(--radius);padding:24px}
+    .content h2{font-size:22px;margin:20px 0 10px}
+    .content p{margin:10px 0}
+    .lead{font-size:18px;color:var(--ink-600)}
+    .pair{display:grid;grid-template-columns: 120px 1fr;gap:16px;align-items:center;border:1px solid var(--mauve-100);border-radius:16px;padding:14px;margin:14px 0;background:linear-gradient(180deg,#fff,var(--mauve-50))}
+    .pair .img{width:100%;height:100px;border-radius:12px;background:#eee center/cover}
+    .pair h3{margin:0 0 6px;font-size:18px}
+    .pair p{margin:0;color:var(--ink-600)}
+    aside{display:flex;flex-direction:column;gap:16px}
+    .widget{background:#fff;border:1px solid var(--mauve-100);border-radius:var(--radius);padding:18px}
+    .widget h3{margin-top:0;font-size:16px}
+    .cta{display:block;text-align:center;background:linear-gradient(135deg,var(--mauve-500),var(--mauve-400));color:#fff;padding:14px;border-radius:999px;font-weight:600;box-shadow:var(--shadow)}
+    .cta:hover{filter:brightness(.95)}
+    footer{border-top:1px solid var(--mauve-100);padding:24px;color:var(--ink-600);text-align:center;margin-top:20px}
+    .to-top{position:fixed;right:18px;bottom:18px;border:none;background:#fff;border:1px solid var(--mauve-100);padding:10px 14px;border-radius:999px;box-shadow:var(--shadow);cursor:pointer;font-weight:600}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="logo"></div>
+        <h1>LALA´S Blog</h1>
+        <span class="tag">Accesorios</span>
+      </div>
+      <nav>
+        <a href="blog1.html">Inicio</a>
+        
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">Tendencias</span>
+        <h2 class="title">Collares, anillos y pulseras</h2>
+        <p class="subtitle">Descubre las piezas que están marcando tendencia esta temporada y cómo combinarlas para darle estilo a cualquier look.</p>
+        <div class="meta">
+          <span class="chip">💍 Accesorios</span>
+          <span class="chip">⏱ 5 min de lectura</span>
+        </div>
+      </div>
+    </section>
+
+    <article id="articulo">
+      <section class="content">
+        <p class="lead">Los accesorios son la clave para transformar cualquier outfit. Aquí te mostramos los estilos de collares, anillos y pulseras que están en tendencia y cómo combinarlos para destacar tu look.</p>
+
+        <div class="pair">
+          <div class="img" style="background-image:url('collar.jpg')"></div>
+          <div>
+            <h3>Collares en capas</h3>
+            <p>Combinar varios collares delicados de diferentes largos es tendencia. Se ven perfectos sobre camisetas básicas o vestidos veraniegos.</p>
+          </div>
+        </div>
+
+        <div class="pair">
+          <div class="img" style="background-image:url('anillo.jpg')"></div>
+          <div>
+            <h3>Anillos minimalistas</h3>
+            <p>Anillos finos y geométricos se llevan varios en una mano. Puedes mezclar metales y formas para un efecto moderno.</p>
+          </div>
+        </div>
+
+        <div class="pair">
+          <div class="img" style="background-image:url('pulsera.jpg')"></div>
+          <div>
+            <h3>Pulseras delicadas</h3>
+            <p>Las pulseras finas, ya sean en cadenas o con dijes, aportan un toque elegante y juvenil. Combínalas en varias capas para un look trendy.</p>
+          </div>
+        </div>
+
+  
+      </section>
+
+    <aside>
+        <div class="widget">
+          <h3>Compra tus accesorios en LALA´S</h3>
+          <p>Dale un toque único a tu look con nuestros collares, pulseras y anillos.</p>
+          <a class="cta" href="accesorios.html">Ver catálogo </a>
+        </div>
+     
+      </aside>
+    </article>
+
+    <section id="relacionados" class="related">
+      <h3>También te puede gustar</h3>
+      <div class="pair">
+        <div class="img" style="background-image:url('vestido69.jpg')"></div>
+        <div>
+          <h3>Looks casuales con amigas</h3>
+          <p>Ideas frescas y cómodas para salir con tus amigas y lucir a la moda.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> LALA´S. Moda juvenil con estilo.
+  </footer>
+
+  <button class="to-top">↑</button>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const toTop=document.querySelector('.to-top');
+    toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+    window.addEventListener('scroll',()=>{toTop.style.display=window.scrollY>400?'block':'none'});
+  </script>
+</body>
+</html>
